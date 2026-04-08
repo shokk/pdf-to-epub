@@ -2,6 +2,8 @@
 
 Convert a PDF to a pixel-perfect fixed-layout EPUB. Each page is rendered as a high-quality image — exactly as it appears in the PDF — and embedded in a fixed-layout EPUB that preserves the original layout on any EPUB reader.
 
+While this is not the best way to consume PDFs, I wanted files that I could use in Apple Books to read between my devices which would keep track of the page I left off on. When reading PDFs, because the Mac uses the Preview app, it does not keep track of what page you left off on.
+
 ## How it works
 
 1. Each PDF page is rasterized via **poppler** (the same engine used by print drivers) at the specified DPI.
