@@ -20,7 +20,7 @@ import os
 import sys
 import uuid
 import zipfile
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 
@@ -206,8 +206,8 @@ PAGE_XHTML_TEMPLATE = """\
 def build_epub(pages: list[dict], title: str, output_path: Path):
     """Assemble the fixed-layout EPUB zip archive."""
     uid = f"urn:uuid:{uuid.uuid4()}"
-    now = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
-    today = datetime.utcnow().strftime("%Y-%m-%d")
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
     manifest_lines = []
     spine_lines = []
